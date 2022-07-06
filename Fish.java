@@ -12,14 +12,14 @@ public class Fish{
 	 Color black;
 	 
 	 public Fish(){
-		 x= (int)(Math.random()*799); //random 0 to 800
-		 y= (int)(Math.random()*596); //random 0 to 600
+		 x= (int)(Math.random()*799); 
+		 y= (int)(Math.random()*596); 
 		 red = new Color (250,128,114);
 		 black = new Color(0,0,0);
 	 }
 	 
 	 public void drawMe(Graphics g){
-        //specks
+        
         g.setColor(red);
         g.fillOval(x,y,10,14);
         g.fillOval(x+2,y+10,7,7);

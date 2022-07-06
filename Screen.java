@@ -133,7 +133,7 @@ public class Screen extends JPanel implements KeyListener{
 	}
  
     public Dimension getPreferredSize() {
-        //Sets the size of the panel
+        
         return new Dimension(800,600);
     }
      
@@ -156,7 +156,6 @@ public class Screen extends JPanel implements KeyListener{
         
         
         if(level==1){
-      	 	//background
         	g.setColor(darkblue);
         	g.fillRect(0,0,800,600);
         	
@@ -171,7 +170,6 @@ public class Screen extends JPanel implements KeyListener{
         	}
         }
         
-        //level 2
         if(level==2){
         	g.setColor(lightblue);
         	g.fillRect(0,0,800,600);
@@ -188,7 +186,6 @@ public class Screen extends JPanel implements KeyListener{
         	}
         }
         
-        //score
         Font font = new Font("Rockwell", Font.PLAIN, 30);
 		g.setFont(font);
         g.setColor(orange);
@@ -198,7 +195,6 @@ public class Screen extends JPanel implements KeyListener{
 		g.setColor(orange);
         g.drawString(""+score,50,150);
         
-        //lives
         Font font5 = new Font("Rockwell", Font.PLAIN, 30);
 		g.setFont(font5);
         g.setColor(orange);
@@ -208,7 +204,6 @@ public class Screen extends JPanel implements KeyListener{
 		g.setColor(orange);
         g.drawString(""+lives,50,250);
         
-        //level
 		g.setFont(font5);
         g.setColor(orange);
         g.drawString("level: ",50,300);
@@ -217,7 +212,6 @@ public class Screen extends JPanel implements KeyListener{
 		g.setColor(orange);
         g.drawString(""+level,50,350);
         
-        //if player wins
         if(score==21 && lives>0){
         	Font font3 = new Font("Arial", Font.PLAIN, 100);
 			g.setFont(font3);
@@ -228,7 +222,6 @@ public class Screen extends JPanel implements KeyListener{
      		g.drawString("press r to restart",200,500);
      	}
        
-        //if player loses 
         if(lives<1){
      		Font font3 = new Font("Arial", Font.PLAIN, 100);
 			g.setFont(font3);
@@ -289,40 +282,32 @@ public class Screen extends JPanel implements KeyListener{
     
     
     public void keyPressed(KeyEvent e){
-    	//System.out.println( e.getKeyCode());
     	if(e.getKeyCode()==39){
-    		//move player1 right
     		p1.moveRight();
     		proY = proY-15;
     	}
     	
     	if(e.getKeyCode()==37){
-    		//move player2 left
     		p1.moveLeft();
     		proY = proY+15;
     	}
     	
     	if(e.getKeyCode()==68){
-    		//move player2 right with d
     		if(player2==true){
     			p2.moveRight2();
     			proY2 = proY2-15;
     		}
     	}
     	
-    	if(e.getKeyCode()==65){
-    		//move player2 left with a 
+    	if(e.getKeyCode()==65){ 
     		if(player2==true){
     			p2.moveLeft2();
     			proY2 = proY2+15;
     		}
     	} 
     	
-    	//press space bar to shoot first projectile
     	if(e.getKeyCode()==32){
     		visible=true;
-    		//visible2=true;
-    		//shoots the projectile;
     		projectile.fire(p1.getX(), p1.getY());
     		
     		promove2=true;
@@ -330,11 +315,9 @@ public class Screen extends JPanel implements KeyListener{
     		this.playSound();
     	}
     	
-    	//press s to shoot second projectile
     	if(e.getKeyCode()==83){
     		visible2=true;
     		visible=true;
-    		//shoots the projectile;
     		
     		if(player2==true){
     			projectile2.fire2(p2.getX2(), p2.getY2());
@@ -346,7 +329,6 @@ public class Screen extends JPanel implements KeyListener{
     	
     	
     	
-    	//press p to go to level 2
     	if(e.getKeyCode()==80){
     		level1 = false;
     		level2 = true;
@@ -367,7 +349,6 @@ public class Screen extends JPanel implements KeyListener{
         	
     	}
     	
-    	//press 1 to start with one player
     	if(e.getKeyCode()==49){
     		level = 1;
     		level2 = false;
@@ -375,7 +356,6 @@ public class Screen extends JPanel implements KeyListener{
 				
     	}
     	
-    	//press 2 to start with two players
     	if(e.getKeyCode()==50){
     		level = 1;
     		level2 = false;
@@ -384,7 +364,6 @@ public class Screen extends JPanel implements KeyListener{
 				
     	}
     	
-    	//press r to start over
     	if(e.getKeyCode()==82){
     		lives = 3;
     		score = 0;
@@ -461,7 +440,6 @@ public class Screen extends JPanel implements KeyListener{
         		}
         		
         		x++;
-        		//check collision
         		
         		if(level1==true){
         			for(int spot=0; spot<enemy.length; spot++){
@@ -509,8 +487,6 @@ public class Screen extends JPanel implements KeyListener{
         			for(int spot=0; spot<enemy2.length; spot++){
         				enemy2[spot].checkCollision(projectile);
         				enemy2[spot].checkCollision2(projectile2);
-        				//enemy2[spot].checkPlayerCollision(p1);
-        				//enemy2[spot].checkPlayerCollision2(p2);
         			}
         		}
         		
@@ -593,7 +569,6 @@ public class Screen extends JPanel implements KeyListener{
     			
     			
     			if(level2==true){
-    				//level 2
     				score = 6;
     				for(int i=0; i<enemy2.length; i++){
     					if(enemy2[i].getVisible()==false){
@@ -621,14 +596,12 @@ public class Screen extends JPanel implements KeyListener{
     				
     			}
         	
-            //wait for .01 second
             try {
                 Thread.sleep(40);
             } catch(InterruptedException ex) {
                 Thread.currentThread().interrupt();
             }
  
-            //repaint the graphics drawn
             repaint();
         }
     }    

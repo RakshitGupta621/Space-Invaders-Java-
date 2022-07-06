@@ -11,8 +11,8 @@ public class Bubbles2{
 	 Color blue;
 	 
 	 public Bubbles2(){
-		 x= (int)(Math.random()*799); //random 0 to 800
-		 y= (int)(Math.random()*596); //random 0 to 600
+		 x= (int)(Math.random()*799); 
+		 y= (int)(Math.random()*596); 
 		 blue = new Color (30,144,255);
 	 }
 	 

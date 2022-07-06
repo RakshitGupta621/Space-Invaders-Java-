@@ -67,7 +67,7 @@ public class Enemy{
          
     }
      
-    public void playSound() {
+    public void playSound() { // adding the sound for the collision time
 
         try {
             URL url = this.getClass().getClassLoader().getResource("sound/lose2.wav");
@@ -79,7 +79,7 @@ public class Enemy{
         }
     }
     
-    public void checkCollision(Projectile projectile){
+    public void checkCollision(Projectile projectile){ // checking collision for the player
     	if(visible == true && projectile.getVisible()==true){
     		int pX = projectile.getX();
     		int pY = projectile.getY();
@@ -96,7 +96,7 @@ public class Enemy{
     	}
     }
     
-    public void checkCollision2(Projectile2 projectile2){
+    public void checkCollision2(Projectile2 projectile2){  // checking collision for the player 
     	if(visible == true && projectile2.getVisible2()==true){
     		int pX = projectile2.getX2();
     		int pY = projectile2.getY2();
@@ -149,15 +149,15 @@ public class Enemy{
     	return visible;
     }
     
-    public boolean getVisible2(){
+    public boolean getVisible2(){ //
     	return visible2;
     }
     
-    public int getScore(){
+    public int getScore(){  // printing the score onto the screen
     	return score;
     }
     
-    public void move(){
+    public void move(){ // moving player 1 in the left and right direction
     	if(x<730 && toggle==1){
     		x++;
     		if(x==730){
@@ -175,7 +175,7 @@ public class Enemy{
     	
     }
     
-    public void move2(){
+    public void move2(){ // moving player 2 in the left and right direction
     	if(x<730 && toggle==1){
     		x+=2;
     		if(x==730){
@@ -199,13 +199,13 @@ public class Enemy{
     
     }
     
-    public void startOver(){
+    public void startOver(){ 
     	visible = true;
         y = (int)(Math.random()*150+20);
     
     }
     
-    public int lives(){
+    public int lives(){ // function to print out the screen onto the screen
     	return lives;
     }
     

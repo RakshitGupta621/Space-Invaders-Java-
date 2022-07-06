@@ -52,24 +52,24 @@ public class Enemy2{
     public void drawMe(Graphics g){
      	
      	if(visible){
-     		//face
+     		//printing the face onto the screen
        		g.setColor(white);
         	g.fillRect(x,y,width,height); 
         	g.fillOval(x,y-6,width-31,height-30);
         	g.fillOval(x+15,y-6,width-31,height-30);
         	g.fillOval(x+30,y-6,width-31,height-30);
         	
-        	//eyes	
+        	// >eyes	
         	g.setColor(red);
         	g.fillRect(x+12,y+15, width-42,height-42);
         	g.fillRect(x+28,y+15, width-42,height-42);
         	
-        	//eyebrows
+        	// >eyebrows
         	g.setColor(black);
         	g.fillRect(x+10,y+9,width-40,height-47);
         	g.fillRect(x+26,y+9,width-40,height-47);
         	
-        	//mouth
+        	// >mouth
         	g.setColor(red);
         	g.fillRect(x+13,y+32, width-27,height-45);
         	g.fillRect(x+10,y+32, width-47,height-40);
@@ -79,7 +79,7 @@ public class Enemy2{
          
     }
     
-     public void playSound() {
+     public void playSound() { // playing the background sound 
 
         try {
             URL url = this.getClass().getClassLoader().getResource("sound/lose2.wav");
@@ -91,7 +91,7 @@ public class Enemy2{
         }
     }
     
-    //projectile hits enemy
+    // >projectile hits enemy
     public void checkCollision(Projectile projectile){
     	if(visible == true && projectile.getVisible()==true){
     		int pX = projectile.getX();
@@ -125,7 +125,7 @@ public class Enemy2{
     	}
     }
     
-    //enemy hits player
+    // >enemy hits player
     public boolean checkPlayerCollision(Player player){
     	if(visible2 == true){
     		int pX = player.getX();
@@ -171,7 +171,7 @@ public class Enemy2{
     	return score;
     }
     
-    public void move(){
+    public void move(){ // function to move the player in the left and right direction
     	if(x<749 && toggle==1){
     		x+=4;
     		if(x>748){

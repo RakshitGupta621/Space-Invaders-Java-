@@ -13,8 +13,8 @@ public class Specks2{
 	 Color grey;
 	 
 	 public Specks2(){
-		 x= (int)(Math.random()*799); //random 0 to 800
-		 y= (int)(Math.random()*596); //random 0 to 600
+		 x= (int)(Math.random()*799);
+		 y= (int)(Math.random()*596);
 		 blue = new Color (173,216,230);
 		 green = new Color(46,139,87);
 		 grey = new Color(169,169,169);

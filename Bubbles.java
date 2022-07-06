@@ -11,13 +11,13 @@ public class Bubbles{
 	 Color blue;
 	 
 	 public Bubbles(){
-		 x= (int)(Math.random()*799); //random 0 to 800
-		 y= (int)(Math.random()*596); //random 0 to 600
+		 x= (int)(Math.random()*799); 
+		 y= (int)(Math.random()*596); 
 		 blue = new Color (70,130,180);
 	 }
 	 
 	 public void drawMe(Graphics g){
-        //specks
+        
         g.setColor(blue);
         g.drawOval(x,y,5,5);
         

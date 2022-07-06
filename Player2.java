@@ -7,7 +7,6 @@ public class Player2{
 	int width;
 	int height;
 	
-	//colors
 	Color blue;
 	Color tan;
 	Color brown;
@@ -21,13 +20,9 @@ public class Player2{
 	public Player2(int x, int y){
 		this.x = x;
 		this.y = y;
-		//x was 400
-		//y was 500
 		
 		this.width = 60;
 		this.height= 75;
-		//width was 35
-		//height was 80
 		
 		this.blue = new Color(0,0,255);
 		this.tan = new Color(245,222,179);
@@ -43,13 +38,11 @@ public class Player2{
  
  	public void drawMe(Graphics g){
  		
- 		//tube
  		g.setColor(blue);
  		g.fillOval(x,y,width,height);
  		g.setColor(darkblue);
  		g.fillOval(x+5,y+4,width-10,height);
  		
- 		//spaceship
  		g.setColor(blue);
  		g.fillOval(x-15,y+60,width+25,height-30);
  		g.setColor(red);
@@ -62,11 +55,9 @@ public class Player2{
  		g.fillRect(x-10,y+50,width-50,height-60);
  		g.fillRect(x+57,y+50,width-50,height-60);
  			
- 		//face
  		g.setColor(green);
  		g.fillOval(x+11,y+20,width-20,height-35);
  		
- 		//eyes
  		g.setColor(blue);
  		g.fillOval(x+18,y+35,width-50,height-65);
  		g.fillOval(x+36,y+35,width-50,height-65);
@@ -75,7 +66,6 @@ public class Player2{
  		g.fillOval(x+20,y+37,width-55,height-68);
  		g.fillOval(x+38,y+37,width-55,height-68);
  		
- 		//mouth
  		g.setColor(red);
  		g.fillOval(x+22,y+45,width-40,height-65);
  		g.setColor(green);
