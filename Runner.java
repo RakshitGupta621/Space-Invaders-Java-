@@ -5,7 +5,7 @@ public class Runner {
    
     public static void main(String[] args) {
  
-        JFrame frame = new JFrame("Projectile Lab");
+        JFrame frame = new JFrame("Space-Invaders-Java-");
  
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
