@@ -1,4 +1,4 @@
-HOW TO PLAY
+challenges I did:
 -2 players
 -animated background
 
